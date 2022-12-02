@@ -1,0 +1,36 @@
+{
+  "name": "transactions-backend",
+  "version": "1.0.0",
+  "description": "",
+  "type": "module",
+  "main": ".src/index.ts",
+  "scripts": {
+    "compile": "tsc",
+    "start": "npm run compile && node ./dist/src/index.js",
+    "codegen": "graphql-codegen --config codegen.ts"
+  },
+  "prisma": {
+    "seed": "node prisma/seed.js"
+  },
+  "author": "Gabriel Ferro <gabrielferroroque@hotmail.com>",
+  "license": "ISC",
+  "devDependencies": {
+    "@graphql-codegen/cli": "2.14.1",
+    "@graphql-codegen/introspection": "2.2.1",
+    "@graphql-codegen/typescript": "2.8.2",
+    "@graphql-codegen/typescript-resolvers": "2.7.7",
+    "@types/node": "^18.11.9",
+    "prisma": "^4.6.1",
+    "ts-node": "^10.9.1",
+    "ts-node-dev": "^2.0.0",
+    "typescript": "^4.9.3"
+  },
+  "dependencies": {
+    "@apollo/server": "^4.2.2",
+    "@prisma/client": "^4.6.1",
+    "csv-parse": "^5.3.2",
+    "graphql": "^16.6.0",
+    "graphql-import-node": "^0.0.5",
+    "graphql-modules": "^2.1.0"
+  }
+}
