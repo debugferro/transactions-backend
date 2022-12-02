@@ -1,0 +1,58 @@
+type Category {
+  id: String
+  name: String
+  color: String
+}
+
+type Account {
+  name: String
+  bank: String
+}
+
+type Transaction {
+  id: String
+  account: Account
+  accountId: String
+  category: Category
+  categoryId: String
+  reference: String
+  amount: String
+  currency: String
+  date: String
+  createdAt: String
+}
+
+type PageInfo {
+  page: Int
+  hasNextPage: Boolean
+}
+
+type Transactions {
+  nodes: [Transaction]
+  pageInfo: PageInfo
+}
+
+type Query {
+  transactions(
+    bank: String,
+    account: String,
+    reference: String,
+    amount: String,
+    category: String,
+    startDate: String,
+    endDate: String, 
+    currency: String,
+    page: Int
+  ): Transactions
+
+  transaction(id: String!): Transaction
+
+  accounts: [Account]
+  account(id: String): Account
+
+  categories: [Category]
+}
+
+type Mutation {
+  transaction(id: String!, categoryId: String): Transaction
+}
