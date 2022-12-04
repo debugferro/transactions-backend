@@ -46,16 +46,9 @@ export type PageInfo = {
 
 export type Query = {
   __typename?: 'Query';
-  account?: Maybe<Account>;
-  accounts?: Maybe<Array<Maybe<Account>>>;
   categories?: Maybe<Array<Maybe<Category>>>;
   transaction?: Maybe<Transaction>;
   transactions?: Maybe<Transactions>;
-};
-
-
-export type QueryAccountArgs = {
-  id?: InputMaybe<Scalars['String']>;
 };
 
 
@@ -65,11 +58,7 @@ export type QueryTransactionArgs = {
 
 
 export type QueryTransactionsArgs = {
-  account?: InputMaybe<Scalars['String']>;
-  amount?: InputMaybe<Scalars['String']>;
-  bank?: InputMaybe<Scalars['String']>;
   category?: InputMaybe<Scalars['String']>;
-  currency?: InputMaybe<Scalars['String']>;
   endDate?: InputMaybe<Scalars['String']>;
   page?: InputMaybe<Scalars['Int']>;
   reference?: InputMaybe<Scalars['String']>;
@@ -215,8 +204,6 @@ export type PageInfoResolvers<ContextType = any, ParentType extends ResolversPar
 };
 
 export type QueryResolvers<ContextType = any, ParentType extends ResolversParentTypes['Query'] = ResolversParentTypes['Query']> = {
-  account?: Resolver<Maybe<ResolversTypes['Account']>, ParentType, ContextType, Partial<QueryAccountArgs>>;
-  accounts?: Resolver<Maybe<Array<Maybe<ResolversTypes['Account']>>>, ParentType, ContextType>;
   categories?: Resolver<Maybe<Array<Maybe<ResolversTypes['Category']>>>, ParentType, ContextType>;
   transaction?: Resolver<Maybe<ResolversTypes['Transaction']>, ParentType, ContextType, RequireFields<QueryTransactionArgs, 'id'>>;
   transactions?: Resolver<Maybe<ResolversTypes['Transactions']>, ParentType, ContextType, Partial<QueryTransactionsArgs>>;

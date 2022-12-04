@@ -34,21 +34,14 @@ type Transactions {
 
 type Query {
   transactions(
-    bank: String,
-    account: String,
     reference: String,
-    amount: String,
     category: String,
     startDate: String,
-    endDate: String, 
-    currency: String,
+    endDate: String,
     page: Int
   ): Transactions
 
   transaction(id: String!): Transaction
-
-  accounts: [Account]
-  account(id: String): Account
 
   categories: [Category]
 }
