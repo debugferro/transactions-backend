@@ -38,7 +38,6 @@ export const resolvers: Resolvers = {
   Transaction: {
     category: async (parent, _args, context) => {
       if (!parent.categoryId) { return null }
-      console.log('vim pegar cetegory... ainda que eu já tenha...')
       return context.prisma.category.findUnique({ where: { id: parent.categoryId } })
     },
     account: async (parent, _args, context) => {
