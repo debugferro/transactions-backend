@@ -14,18 +14,22 @@ export interface Context {
   prisma?: PrismaClient
 }
 
-const server = new ApolloServer<Context>({
-  typeDefs,
-  resolvers
-})
+async function main() {
+  const server = new ApolloServer<Context>({
+    typeDefs,
+    resolvers
+  })
+  
+  const { url } = await startStandaloneServer(server, {
+    context: async () => {
+      return {
+        prisma
+      }
+    },
+    listen: { port: 4000 }
+  })
+  console.log(`🚀  Server ready at: ${url}`)
+}
 
-const { url } = await startStandaloneServer(server, {
-  context: async (_) => {
-    return {
-      prisma
-    }
-  },
-  listen: { port: 4000 }
-})
+main()
 
-console.log(`🚀  Server ready at: ${url}`)
