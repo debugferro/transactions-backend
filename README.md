@@ -18,6 +18,12 @@ The apollo server will be available at `http://localhost:4000`. Remember to run 
 
 Now you can run the [frontend client](https://github.com/debugferro/transactions-frontend).
 
+## 🏗️ Built with:
+- NodeJS/Typescript
+- PostgreSQL
+- Apollo Server
+- Prisma
+
 ## 💾 Database Schema
 
 ![Database Diagram](https://i.imgur.com/nla53YP.png)
