@@ -8,13 +8,12 @@ export const prisma = new PrismaClient({
   log: ['query', 'error']
 })
 
-const typeDefs = readFileSync('src/graphql/schema.graphql', 'utf-8')
-
 export interface Context {
   prisma?: PrismaClient
 }
 
 async function main() {
+  const typeDefs = readFileSync('src/graphql/schema.graphql', 'utf-8')
   const server = new ApolloServer<Context>({
     typeDefs,
     resolvers
@@ -32,4 +31,3 @@ async function main() {
 }
 
 main()
-
