@@ -21,7 +21,7 @@ Now you can run the [frontend client](https://github.com/debugferro/transactions
 ## 🏗️ Built with:
 - NodeJS/Typescript
 - PostgreSQL
-- Apollo Server
+- Apollo Server v4
 - Prisma
 
 ## 💾 Database Schema
