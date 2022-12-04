@@ -38,6 +38,7 @@ export const resolvers: Resolvers = {
   Transaction: {
     category: async (parent, _args, context) => {
       if (!parent.categoryId) { return null }
+      
       return context.prisma.category.findUnique({ where: { id: parent.categoryId } })
     },
     account: async (parent, _args, context) => {
@@ -45,8 +46,10 @@ export const resolvers: Resolvers = {
 
       return context.prisma.account.findUnique({ where: { id: parent.accountId } })
     },
-    date: async (parent, _args, _context) => (
-      new Date(parent.date).toISOString()
-    )
+    date: async (parent, _args, _context) => {
+      if(!parent.date) { return null }
+
+      return new Date(parent.date).toISOString()
+    }
   }
 }
