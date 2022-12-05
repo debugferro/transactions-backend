@@ -28,7 +28,7 @@ Now you can run the [frontend client](https://github.com/debugferro/transactions
 
 ![Database Diagram](https://i.imgur.com/nla53YP.png)
 
-## 🪄 GraphQL Schema
+## ✨ GraphQL Schema
 
 ### Schema Types
 
