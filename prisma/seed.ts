@@ -60,7 +60,7 @@ async function main () {
       }
     })
 
-    if(!transaction) { continue }
+    if(transaction) { continue }
     
     const data = {}
     if (transactions[i].accountId) {
